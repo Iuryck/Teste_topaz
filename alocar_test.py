@@ -15,7 +15,7 @@ class TestAlocador(unittest.TestCase, aloc):
         self.assertEqual([], alocador.servers, "Should be []")
         self.assertEqual([], alocador.servers, "Should be 0")
 
-    #Testando o raise FileNotFoundError na função read_input
+    #Testando os erros levantados na função read_input
     def test_read_error(self):
         
 
@@ -24,6 +24,14 @@ class TestAlocador(unittest.TestCase, aloc):
         
         self.assertRaises(FileNotFoundError, lambda: alocador._read_input())
         os.rename('input1.txt','input.txt')
+
+        alocador = aloc()
+        with open('input.txt', 'w') as input:
+            input.write(f'11\n2\n1\n3\n0\n1\n0\n1')
+        
+        self.assertRaises(ValueError, lambda: alocador._read_input())
+
+
 
 
     #Testando o cálculo de custo das VMs
