@@ -4,6 +4,6 @@ Esse repositório é para o teste de recrutamento para a vaga de Dev Python Jr n
 
 # Uso
 
-A classe Aclocator possui a função iterating_ticks que faz tudo que é necessário para cumprir a tarefa
+A classe Alocator possui a função **iterating_ticks** que faz tudo que é necessário para cumprir a tarefa
 
 Os testes foram feitos com Unittest
