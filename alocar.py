@@ -25,6 +25,10 @@ class Alocator():
             Lines = [c.strip() for c in Lines]
             self.ttask = int(Lines[0])
             self.umax = int(Lines[1])
+
+            if (self.umax<1 or self.umax>10) or (self.ttask>10 or self.ttask<1):
+                raise ValueError(' Valores para Umax e TTask precisam ser entre 1 e 10')
+
             self.new_users = [ int(c) for c in Lines[2:]]
             input.close()
 
